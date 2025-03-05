@@ -1,0 +1,7 @@
+{
+    "host": "zigzag_trade_DB",
+    "port": 5432,
+    "user": "dong",
+    "password": "IZeLPhOP3umpOMIAsuosW23GuJoyEfXBl-b6qwzW8kU=",
+    "dbname": "zigzag"
+}
