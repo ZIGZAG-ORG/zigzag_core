@@ -8,7 +8,7 @@ import (
 	"gorm.io/gorm"
 )
 
-const prefix = "/trade_api"
+const prefix = "/core_api"
 
 func StartServer(db *gorm.DB, port int) {
 	router := SetupRouter(db)
@@ -18,10 +18,10 @@ func StartServer(db *gorm.DB, port int) {
 func SetupRouter(db *gorm.DB) *gin.Engine {
 	router := gin.Default()
 
-	router.POST(fmt.Sprintf("%s/trade_log", prefix), service.Createtrade(db))
-	router.GET(fmt.Sprintf("%s/trade_log", prefix), service.FindTradeLogs(db))
-	// router.PUT(fmt.Sprintf("%s/trade", prefix), service.UpdateVendor(db))
-	// router.DELETE(fmt.Sprintf("%s/trade", prefix), service.DeleteVendors(db))
+	router.POST(fmt.Sprintf("%s/api_key", prefix), service.CreateAPIKey(db))
+	router.GET(fmt.Sprintf("%s/api_key", prefix), service.FindAPIKey(db))
+	router.PUT(fmt.Sprintf("%s/api_key", prefix), service.UpdateAPIKey(db))
+	router.DELETE(fmt.Sprintf("%s/api_key", prefix), service.DeleteAPIKey(db))
 
 	return router
 }
