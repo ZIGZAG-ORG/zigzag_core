@@ -10,10 +10,13 @@ import (
 )
 
 type updateAPIKeyinput struct {
-	UserPK    int    `json:"user_pk" gorm:"primaryKey;not null"`
-	AppKey    string `json:"app_key" gorm:"not null"`
-	AppSecret string `json:"app_secret" gorm:"not null"`
-	GeminiKey string `json:"gemini_key" gorm:"not null"`
+	UserPK    int    `json:"user_pk" gorm:"not null"`
+	AppKey    string `json:"app_key" gorm:"type:text;not null"`
+	AppSecret string `json:"app_secret" gorm:"type:text;not null"`
+	OpenAIKey string `json:"open_ai_key" gorm:"type:text;not null"`
+	GeminiKey string `json:"gemini_key" gorm:"type:text;not null"`
+	Account01 string `json:"account_01" gorm:"column:account_01;not null"`
+	Account02 string `json:"account_02" gorm:"column:account_02;not null"`
 }
 
 func UpdateAPIKey(db *gorm.DB) gin.HandlerFunc {
@@ -36,10 +39,13 @@ func UpdateAPIKey(db *gorm.DB) gin.HandlerFunc {
 		}
 
 		updateApikey := map[string]interface{}{
-			"app_key":    input.AppKey,
-			"app_secret": input.AppSecret,
-			"gemini_key": input.GeminiKey,
-			"updatedAt":  time.Now().UTC(),
+			"app_key":     input.AppKey,
+			"app_secret":  input.AppSecret,
+			"open_ai_key": input.OpenAIKey,
+			"gemini_key":  input.GeminiKey,
+			"account_01":  input.Account01,
+			"account_02":  input.Account02,
+			"updated_at":  time.Now().UTC(),
 		}
 
 		tx := db.Begin()
