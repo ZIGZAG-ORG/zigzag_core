@@ -21,7 +21,7 @@ func FindAPIKey(db *gorm.DB) gin.HandlerFunc {
 
 		var apikey []model.APIKey
 
-		result := db.Table("trade_log").Where("user_pk = ?", userPK).Find(&apikey)
+		result := db.Table("api_key").Where("user_pk = ?", userPK).Find(&apikey)
 		if result.Error != nil {
 			c.JSON(error_code.ErrFindRecordFailed.Code, gin.H{"error": error_code.ErrFindRecordFailed.Message})
 			return
