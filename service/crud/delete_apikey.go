@@ -19,9 +19,12 @@ func DeleteAPIKey(db *gorm.DB) gin.HandlerFunc {
 			return
 		}
 
-		if err := db.Delete(&model.APIKey{}, userPK).Error; err != nil {
+		if err := tx.Where("user_pk = ?", userPK).Delete(&model.APIKey{}).Error; err != nil {
 			tx.Rollback()
-			c.JSON(error_code.ErrDeleteRecordFailed.Code, gin.H{"error": error_code.ErrDeleteRecordFailed.Message, "detail": err.Error()})
+			c.JSON(error_code.ErrDeleteRecordFailed.Code, gin.H{
+				"error":  error_code.ErrDeleteRecordFailed.Message,
+				"detail": err.Error(),
+			})
 			return
 		}
 
