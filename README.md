@@ -115,7 +115,7 @@ This allows for more sophisticated investment strategies, minimizes investment r
 
 The ultimate goal of this project is to develop a **highly advanced automated stock trading bot utilizing LLM technology**.  
 
-This bot will efficiently handle the entire process, from market data analysis to investment strategy formulation and automatic trade execution.  
+This bot will efficiently handle the entire process, from market data analysis to investment strategy formulation and automatic core execution.  
 
 ### **📌 Key Objectives**  
 
@@ -170,7 +170,7 @@ This bot will efficiently handle the entire process, from market data analysis t
 
 ## 🚀 Future Enhancements  
 
-1. **Blockchain-Based Trade Record Management**  
+1. **Blockchain-Based core Record Management**  
 2. **AI-Based Automated News Summarization**  
 3. **Sentiment Analysis (Fear & Greed Index Calculation)**  
 4. **Virtual Trading Module**  

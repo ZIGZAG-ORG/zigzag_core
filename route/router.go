@@ -2,7 +2,7 @@ package route
 
 import (
 	"fmt"
-	service "zigzag-trade/service/crud"
+	service "zigzag-core/service/crud"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"

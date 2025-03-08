@@ -2,7 +2,7 @@ package service
 
 import (
 	"time"
-	"zigzag-trade/model"
+	"zigzag-core/model"
 
 	"github.com/LabStars/selpo-common/status/error_code"
 	"github.com/LabStars/selpo-common/status/success_code"

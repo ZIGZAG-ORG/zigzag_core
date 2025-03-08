@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"zigzag-trade/route"
+	"zigzag-core/route"
 
 	"github.com/LabStars/selpo-common/crypto"
 	"github.com/LabStars/selpo-common/db"

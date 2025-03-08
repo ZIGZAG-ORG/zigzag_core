@@ -3,7 +3,7 @@ package service
 import (
 	"net/http"
 	"time"
-	"zigzag-trade/model"
+	"zigzag-core/model"
 
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
