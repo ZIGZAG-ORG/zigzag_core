@@ -11,10 +11,6 @@ import (
 	"gorm.io/gorm"
 )
 
-const (
-	RealDomain = "https://openapi.koreainvestment.com:9443"
-)
-
 type TokenRequest struct {
 	GrantType string `json:"grant_type"`
 	AppKey    string `json:"appkey"`
@@ -26,6 +22,7 @@ type TokenResponse struct {
 }
 
 func GetKoreaInvestmentToken(appKey, secretKey string, db *gorm.DB) (*TokenResponse, error) {
+	RealDomain := "https://openapi.koreainvestment.com:9443"
 	fmt.Println("진입중..")
 	apikeys, err := service.GetAPIKeyByUserPK(db, "7")
 	if err != nil {
